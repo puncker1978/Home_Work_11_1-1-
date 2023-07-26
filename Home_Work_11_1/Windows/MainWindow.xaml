@@ -128,13 +128,13 @@
             </Grid>
             
         </Grid>
-
+        
         <!--Таблица клиентов-->
         <DataGrid  x:Name="list_clients"
                    AutoGenerateColumns="False"
-                   SelectionChanged="list_clients_SelectionChanged"
                    Grid.Row="1"
                    Margin="5">
+            <!--SelectionChanged="list_clients_SelectionChanged"-->
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding SecondName}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}" IsReadOnly="True" Width="*"/>
