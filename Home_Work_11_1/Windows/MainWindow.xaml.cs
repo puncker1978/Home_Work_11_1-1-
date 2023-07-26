@@ -1,4 +1,6 @@
-﻿namespace Home_Work_11_1
+﻿using Home_Work_11_1.Windows;
+
+namespace Home_Work_11_1
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -21,8 +23,8 @@
             if (list_clients.SelectedItem != null && list_clients.SelectedItem is Client)
             {
                 Client client = list_clients.SelectedItem as Client;
-                NewClient newClient = new(employee, client);
-                newClient.Show();
+                EditClient editClient = new();
+                editClient.Show();
                 this.Close();
             }
         }
@@ -73,6 +75,7 @@
         private void newClient_Click(object sender, RoutedEventArgs e)
         {
             NewClient newClient = new(employee, client);
+            newClient.Owner = this;
             newClient.Show();
         }
 
