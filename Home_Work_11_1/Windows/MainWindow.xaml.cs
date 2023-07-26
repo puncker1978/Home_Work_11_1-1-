@@ -7,6 +7,7 @@
     {
         private Repository repository;
         private Employee employee;
+        private Client client;
         public MainWindow(Employee employee)
         {
             InitializeComponent();
@@ -17,10 +18,10 @@
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            if (list_clients.SelectedItem != null)
+            if (list_clients.SelectedItem != null && list_clients.SelectedItem is Client)
             {
                 Client client = list_clients.SelectedItem as Client;
-                NewClient newClient = new(client);
+                NewClient newClient = new(employee, client);
                 newClient.Show();
                 this.Close();
             }
@@ -71,7 +72,8 @@
 
         private void newClient_Click(object sender, RoutedEventArgs e)
         {
-
+            NewClient newClient = new(employee, client);
+            newClient.Show();
         }
 
         private void cancel_Click(object sender, RoutedEventArgs e)
