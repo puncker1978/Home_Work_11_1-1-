@@ -40,7 +40,7 @@
                              FontSize="20"
                              VerticalContentAlignment="Center"/>
                     <Button x:Name ="searchButton"   
-                            Width="155"
+                            Width="150"
                             Height="32">
                         <StackPanel Orientation="Horizontal">
                             <Label Content="Поиск"
@@ -112,13 +112,16 @@
         </Grid>
 
         <!--Таблица клиентов-->
-        <DataGrid Grid.Row="1"
-                  Margin="5">
+        <DataGrid  x:Name="list_clients"
+                   AutoGenerateColumns="False"
+                   SelectionChanged="list_clients_SelectionChanged"
+                   Grid.Row="1"
+                   Margin="5">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding SecondName}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Отчество" Binding="{Binding ThirdName}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding PhoneNumber}" IsReadOnly="True" Width="*"/>
                 
                 <DataGridTemplateColumn Header="Действия" IsReadOnly="True" Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
