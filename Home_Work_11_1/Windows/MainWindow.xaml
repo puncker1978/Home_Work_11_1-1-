@@ -39,14 +39,14 @@
                              Margin="5 0 5 0"
                              FontSize="20"
                              VerticalContentAlignment="Center"
-                             ToolTip="Введите фамилию для поиска"/>
+                             ToolTip="Введите фамилию для поиска"
+                             ToolTipService.InitialShowDelay="10"/>
                     <Button x:Name ="searchButton"   
                             Width="150"
                             Height="32"
+                            ToolTip="Поиск по фамилии"
+                            ToolTipService.InitialShowDelay="10"
                             Click="searchButton_Click">
-                        <ToolTip Content="Поиск по фамилии">
-                            
-                        </ToolTip>
                         <StackPanel Orientation="Horizontal">
                             <Label Content="Поиск"
                                    HorizontalAlignment="Left"
@@ -134,16 +134,24 @@
                 <DataGridTemplateColumn Header="Действия" IsReadOnly="True" Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                
+                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Center">
+
                                 <Button x:Name="Edit"
-                                        Content="Изменить"
-                                        Click="Edit_Click"/>
+                                        Click="Edit_Click"
+                                        ToolTip="Изменить"
+                                        ToolTipService.InitialShowDelay="10"
+                                        Margin="0 0 10 0">
+                                        <iconPacks:PackIconOcticons Kind="Pencil"/>
+                                </Button>
 
 
                                 <Button x:Name="Delete"
-                                        Content="Удалить"
-                                        Click="Delete_Click"/>
+                                        Click="Delete_Click"
+                                        ToolTip="Удалть"
+                                        ToolTipService.InitialShowDelay="10">
+                                        <iconPacks:PackIconOcticons Kind="Trashcan" />
+                                </Button>
                                 
                             </StackPanel>
                         </DataTemplate>
