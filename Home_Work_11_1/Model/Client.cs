@@ -34,12 +34,14 @@ public class Client : Person
     /// <summary>
     /// Клиент
     /// </summary>
-    /// <param name="firstName">Имя</param>
-    /// <param name="secondName">Фамилия</param>
-    /// <param name="thirdName">Отчество</param>
-    /// <param name="phoneNumber">Номер телефона</param>
-    /// <param name="passportSeries">Серия паспорта</param>
-    /// <param name="passportNumber">Номер паспорта</param>
+    /// <param name="id">Уникальный идентификационный номер клиента</param>
+    /// <param name="firstName">Имя клиента</param>
+    /// <param name="secondName">Фамилия клиента</param>
+    /// <param name="thirdName">Отчество клиента</param>
+    /// <param name="phoneNumber">Номер телефона клиента</param>
+    /// <param name="passportSeries">Серия паспорта клиента</param>
+    /// <param name="passportNumber">Номер паспорта клиента</param>
+    /// <param name="sum">Деньги клиента</param>
     public Client(Guid id,
         string firstName,
         string secondName,
@@ -50,7 +52,7 @@ public class Client : Person
         int sum) : base(firstName, secondName, thirdName)
     {
         Id = id;
-        Account = new Account(sum);
+        Account = new Account(sum, id);
         PhoneNumber = phoneNumber;
         PassportSeries = passportSeries;
         PassportNumber = passportNumber;

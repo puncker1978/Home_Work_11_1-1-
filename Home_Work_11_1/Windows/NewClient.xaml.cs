@@ -14,14 +14,21 @@ namespace Home_Work_11_1
     /// </summary>
     public partial class NewClient : Window
     {
-        public NewClient()
+        Client client;
+        public NewClient(Client client)
         {
             InitializeComponent();
+            this.client = client;
         }
 
         private void NewClient_Click(object sender, RoutedEventArgs e)
-        {
-
+        {           
+                second_name.Text = client.SecondName;
+                first_name.Text = client.FirstName;
+                third_name.Text = client.ThirdName;
+                phone_number.Text = client.PhoneNumber;
+                passport_series.Text = client.PassportSeries;
+                passport_number.Text = client.PassportNumber;
         }
     }
 }

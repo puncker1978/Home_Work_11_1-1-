@@ -42,7 +42,7 @@
                              ToolTip="Введите фамилию для поиска"
                              ToolTipService.InitialShowDelay="10"/>
                     <Button x:Name ="searchButton"   
-                            Width="150"
+                            Width="115"
                             Height="32"
                             ToolTip="Поиск по фамилии"
                             ToolTipService.InitialShowDelay="10"
@@ -59,7 +59,17 @@
                                     HorizontalAlignment="Center"/>
                         </StackPanel>
                     </Button>
-
+                        
+                    <Button x:Name="cancel"
+                        Width="32"
+                        Height="32"
+                        Margin="5 0 0 0"
+                        ToolTip="Сброс"
+                        ToolTipService.InitialShowDelay="10" Click="cancel_Click">
+                        <iconPacks:PackIconModern Kind="Cancel"
+                                                  Width="25"
+                                                  Height="25"/>
+                    </Button>
                 </StackPanel>
                 
                 <!--Сортировки-->

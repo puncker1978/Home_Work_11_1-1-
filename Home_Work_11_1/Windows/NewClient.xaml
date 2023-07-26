@@ -3,10 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        
         mc:Ignorable="d"
-        xmlns:wpfx="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
-        xmlns:wpfx1="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:wpfx="http://schemas.xceed.com/wpf/xaml/toolkit"
         Title="Новый клиент" Height="450" Width="350" WindowStartupLocation="CenterScreen">
     <StackPanel>
 
@@ -79,7 +77,7 @@
                          Margin="2"
                          FontSize="16"
                          VerticalContentAlignment="Center"/>
-                <wpfx1:MaskedTextBox x:Name="phone_number"
+                <wpfx:MaskedTextBox x:Name="phone_number"
                          Mask="+0(000)000-00-00"
                          Grid.Column="1"
                          Grid.Row="3"

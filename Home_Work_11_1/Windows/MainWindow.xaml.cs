@@ -12,18 +12,29 @@
             InitializeComponent();
             repository = new Repository(20);
             list_clients.ItemsSource = repository.Clients;
-            list_clients.SelectedIndex = 0;
             this.employee = employee;
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (list_clients.SelectedItem != null)
+            {
+                Client client = list_clients.SelectedItem as Client;
+                NewClient newClient = new(client);
+                newClient.Show();
+                this.Close();
+            }
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-
+            if (list_clients.SelectedItem != null)
+            {
+                if (list_clients.SelectedItem is Client client)
+                {
+                    repository.Clients.Remove(client);
+                }
+            }
         }
 
         /// <summary>
@@ -61,6 +72,11 @@
         private void newClient_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void cancel_Click(object sender, RoutedEventArgs e)
+        {
+            list_clients.ItemsSource=repository.Clients;
         }
     }
 }
