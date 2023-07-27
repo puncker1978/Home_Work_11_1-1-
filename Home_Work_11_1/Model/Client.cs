@@ -1,93 +1,72 @@
 ﻿namespace Home_Work_11_1.Model;
 
-public class Client : Person
+internal class Client : Person
 {
-    #region Свойства
-
     /// <summary>
     /// Уникальный идентификационный номер клиента
     /// </summary>
-    public Guid Id { get; set; }
+    internal Guid Id { get; set; }
 
     /// <summary>
-    /// Номер телефона
+    /// Номер телефона клиента
     /// </summary>
-    public string PhoneNumber { get; set; }
+    internal string PhoneNumber { get; set; }
 
     /// <summary>
-    /// Серия паспорта
+    /// Адрес клиента
     /// </summary>
-    public string PassportSeries { get; set; }
+    internal Address Address { get; set; }
 
     /// <summary>
-    /// Номер паспорта
+    /// Серия паспорта клиента
     /// </summary>
-    public string PassportNumber { get; set; }
+    internal string PassportSeries { get; set; }
 
     /// <summary>
-    /// Банковский счёт
+    /// Номер паспорта клиента
     /// </summary>
-    Account Account { get; set; }
-    #endregion
+    internal string PassportNumber { get; set; }
 
-    #region Конструктор
     /// <summary>
-    /// Клиент
+    /// Дата рождения
     /// </summary>
-    /// <param name="id">Уникальный идентификационный номер клиента</param>
-    /// <param name="firstName">Имя клиента</param>
-    /// <param name="secondName">Фамилия клиента</param>
-    /// <param name="thirdName">Отчество клиента</param>
-    /// <param name="phoneNumber">Номер телефона клиента</param>
-    /// <param name="passportSeries">Серия паспорта клиента</param>
-    /// <param name="passportNumber">Номер паспорта клиента</param>
-    /// <param name="sum">Деньги клиента</param>
-    public Client(Guid id,
-        string firstName,
-        string secondName,
-        string thirdName,
-        string phoneNumber,
-        string passportSeries,
-        string passportNumber,
-        int sum) : base(firstName, secondName, thirdName)
+    internal DateTime BirthDay { get; set; }
+
+    /// <summary>
+    /// Банковский счёт клиента
+    /// </summary>
+    internal Account Account { get; set; }
+
+    /// <summary>
+    /// Конструктор, описывающий клиента
+    /// </summary>
+    /// <param name="firstName">Имя</param>
+    /// <param name="secondName">Фамилия</param>
+    /// <param name="thirdName">Отчество</param>
+    /// <param name="birthDay">Дата рождения</param>
+    /// <param name="id">Уникальный идентификационный номер</param>
+    /// <param name="phoneNumber">Телефон</param>
+    /// <param name="address">Адрес</param>
+    /// <param name="passportSeries">Серия паспорта</param>
+    /// <param name="passportNumber">Номер паспорта</param>
+    /// <param name="account">Банковский счёт</param>
+    internal Client(string firstName,
+                  string secondName,
+                  string thirdName,
+                  DateTime birthDay,
+                  Guid id,
+                  string phoneNumber,
+                  Address address,
+                  string passportSeries,
+                  string passportNumber,
+                  Account account) : base(firstName, secondName, thirdName)
     {
+        BirthDay = birthDay;
         Id = id;
-        Account = new Account(sum, id);
         PhoneNumber = phoneNumber;
+        Address = address;
         PassportSeries = passportSeries;
         PassportNumber = passportNumber;
+        Account = account;
     }
-    #endregion
-
-    #region Методы
-    public override string ToString()
-    {
-        return $"================================\n" +
-           $"|Фамилия: {this.SecondName}\n" +
-           $"|Имя: {this.FirstName}\n" +
-           $"|Отчество: {this.ThirdName}\n" +
-           $"|Номер телефона: {this.PhoneNumber}\n" +
-           $"|Серия паспорта: {this.PassportSeries}\n" +
-           $"|Номер паспорта: {this.PassportNumber}\n" +
-           $"================================\n";
-    }
-
-    public string ViewedBy(Employee employee)
-    {
-        string str = $"Фамилия: {this.SecondName}\n" +
-                $"Имя: {this.FirstName}\n" +
-                $"Отчество: {this.ThirdName}\n" +
-                $"Номер телефона: {this.PhoneNumber}\n";
-        if (employee is Consultant)
-        {
-            str += $"Серия паспорта: ******\n" +
-                $"Номер паспорта: ****";
-        }
-        else
-        {
-
-        }
-        return str;
-    }
-    #endregion
 }

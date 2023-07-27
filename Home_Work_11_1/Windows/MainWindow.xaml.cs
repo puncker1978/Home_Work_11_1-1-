@@ -1,6 +1,4 @@
-﻿using Home_Work_11_1.Windows;
-
-namespace Home_Work_11_1
+﻿namespace Home_Work_11_1
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
