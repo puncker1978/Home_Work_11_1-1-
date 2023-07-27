@@ -147,6 +147,15 @@
                             <StackPanel Orientation="Horizontal"
                                         HorizontalAlignment="Center">
 
+                                <Button x:Name="details"
+                                        Click="Details_Click"
+                                        ToolTip="Подробнее"
+                                        ToolTipService.InitialShowDelay="10"
+                                        Margin="0 0 10 0">
+                                        <iconPacks:PackIconOcticons Kind="Info" />
+
+                                </Button>
+                                
                                 <Button x:Name="Edit"
                                         Click="Edit_Click"
                                         ToolTip="Изменить"

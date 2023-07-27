@@ -13,7 +13,7 @@ namespace Home_Work_11_1
         public MainWindow(Employee employee)
         {
             InitializeComponent();
-            repository = new(20);
+            repository = new(50);
             list_clients.ItemsSource = repository.Clients;
             this.employee = employee;
         }
@@ -76,12 +76,18 @@ namespace Home_Work_11_1
         {
             NewClient newClient = new(employee, client);
             newClient.Owner = this;
+            this.IsEnabled = false;// Делаем родительское окно недоступным
             newClient.Show();
         }
 
         private void cancel_Click(object sender, RoutedEventArgs e)
         {
             list_clients.ItemsSource=repository.Clients;
+        }
+
+        private void Details_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
