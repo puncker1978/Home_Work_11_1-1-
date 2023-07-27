@@ -1,17 +1,19 @@
-﻿namespace Home_Work_11_1
+﻿using Home_Work_11_1.Model.Repositories;
+
+namespace Home_Work_11_1
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Repository repository;
+        private ClientsRepository repository;
         private Employee employee;
         private Client client;
         public MainWindow(Employee employee)
         {
             InitializeComponent();
-            repository = new Repository(20);
+            repository = new(20);
             list_clients.ItemsSource = repository.Clients;
             this.employee = employee;
         }

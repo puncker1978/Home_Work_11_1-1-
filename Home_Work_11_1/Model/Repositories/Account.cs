@@ -1,6 +1,6 @@
-﻿namespace Home_Work_11_1.Model;
+﻿namespace Home_Work_11_1.Model.Repositories;
 
-internal class Account
+public class Account
 {
     #region Cвойства
     /// <summary>
@@ -13,18 +13,22 @@ internal class Account
     /// </summary>
     public int Sum { get; set; }
 
+    /// <summary>
+    /// Уникальный идентификационный номер клиента
+    /// </summary>
     public Guid IdClient { get; set; }
     #endregion
 
     #region Конструкторы
     /// <summary>
-    /// Банковский счёт с начальной суммой
+    /// Банковский счёт клиента с уникальным идентификационным номером idClient
+    /// с начальной суммой sum
     /// </summary>
     /// <param name="sum">Сумма на счёте</param>
     /// <param name="idClient">Уникальный идентификационный номер клиента</param>
-    public Account(int sum, Guid idClient)
+    public Account(Guid idClient, int sum)
     {
-        Id = new Guid();
+        Id = Guid.NewGuid();
         Sum = sum;
         IdClient = idClient;
     }

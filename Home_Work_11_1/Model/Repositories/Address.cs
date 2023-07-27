@@ -1,26 +1,31 @@
-﻿namespace Home_Work_11_1.Model;
+﻿namespace Home_Work_11_1.Model.Repositories;
 
-internal class Address
+public class Address
 {
+    /// <summary>
+    /// Уникальный идентификационный номер адреса
+    /// </summary>
+    public Guid Id { get; set; }
+
     /// <summary>
     /// Город
     /// </summary>
-    internal string Town { get; set; }
+    public string Town { get; set; }
 
     /// <summary>
     /// Улица
     /// </summary>
-    internal string Street { get; set; }
+    public string Street { get; set; }
 
     /// <summary>
     /// Номер дома
     /// </summary>
-    internal int HouseNumber { get; set; }
+    public int HouseNumber { get; set; }
 
     /// <summary>
     /// Номер квартиры
     /// </summary>
-    internal int ApartmentNumber { get; set; }
+    public int ApartmentNumber { get; set; }
 
     public Address(string town,
                    string street,
@@ -36,7 +41,7 @@ internal class Address
         {
             throw new ArgumentException($"\"{nameof(street)}\" не может быть неопределенным или пустым.", nameof(street));
         }
-
+        Id = Guid.NewGuid();
         Town = town;
         Street = street;
         HouseNumber = houseNumber;

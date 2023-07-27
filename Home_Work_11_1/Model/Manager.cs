@@ -17,17 +17,17 @@ public class Manager : Employee
         oldClientData = newClientData;
     }
 
-    public override string ViewClientData(Client client)
-    {
-        string str = "";
-        str += $"Данные о клиенте:\n" +
-            $"Фамилия: {client.SecondName}\n" +
-            $"Имя: {client.FirstName}\n" +
-            $"Отчество: {client.ThirdName}\n" +
-            $"Номер телефона: {client.PhoneNumber}\n" +
-            $"Серия паспорта: {client.PassportSeries}\n" +
-            $"Номер паспорта: {client.PassportNumber}";
-        return str;
-    }
+    //public override string ViewClientData(Client client)
+    //{
+    //    string str = "";
+    //    str += $"Данные о клиенте:\n" +
+    //        $"Фамилия: {client.SecondName}\n" +
+    //        $"Имя: {client.FirstName}\n" +
+    //        $"Отчество: {client.ThirdName}\n" +
+    //        $"Номер телефона: {client.PhoneNumber}\n" +
+    //        $"Серия паспорта: {client.PassportSeries}\n" +
+    //        $"Номер паспорта: {client.PassportNumber}";
+    //    return str;
+    //}
     #endregion
 }
