@@ -6,7 +6,7 @@ public static class AccountRepository
 
     public static Account Account()
     {
-        return new(new Guid(), random.Next(10, 10_000_000));
+        return new(Guid.NewGuid(), random.Next(10, 10_000_000));
     }
 }
 

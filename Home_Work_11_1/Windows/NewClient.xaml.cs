@@ -1,4 +1,6 @@
 ﻿using Home_Work_11_1.Model.Repositories;
+using System.Drawing;
+using System.Windows.Media;
 
 namespace Home_Work_11_1;
 
@@ -12,11 +14,17 @@ public partial class NewClient : Window
     Address address;
     Account account;
     ClientsRepository repository = MainWindow.repository;
+    Guid idAccount;
+    
 
     public NewClient()
     {
         InitializeComponent();
-        
+        idAccount = Guid.NewGuid();
+        id_account.Text = idAccount.ToString();
+        birthday.Text = DateTime.Now.ToString();
+        birthday.Foreground = Brushes.DarkRed;
+        birthday.FontWeight = FontWeights.Bold;
     }
 
     private void SaveNewClient_Click(object sender, RoutedEventArgs e)

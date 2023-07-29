@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         xmlns:wpfx="http://schemas.xceed.com/wpf/xaml/toolkit"
-        Title="Новый клиент" Height="700" Width="350" WindowStartupLocation="CenterScreen">
+        Title="Новый клиент" Height="700" Width="400" WindowStartupLocation="CenterScreen">
     <StackPanel>
 
         <Border 
             BorderBrush="Black"
             BorderThickness="1" 
             Margin="5" Height="670" >
-            <Grid Height="660" Width="330"
+            <Grid Height="650" Width="370"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="35"/>
@@ -38,7 +38,7 @@
                     <RowDefinition Height="35"/>
                     <RowDefinition Height="35"/>
                 </Grid.RowDefinitions>
-                
+
                 <!--Фамилия-->
                 <Label Grid.Column="0"
                        Grid.Row="0"
@@ -95,7 +95,7 @@
                        Content="Паспорт"
                        VerticalContentAlignment="Center"
                        HorizontalContentAlignment="Center"/>
-                
+
                 <!--Серия-->
                 <Label Grid.Column="0"
                        Grid.Row="5"
@@ -197,7 +197,7 @@
                         Content="Банковский счёт"
                         VerticalContentAlignment="Center"
                         HorizontalContentAlignment="Center"/>
-                
+
                 <!--Номер счёта-->
                 <Label Grid.Column="0"
                         Grid.Row="14"

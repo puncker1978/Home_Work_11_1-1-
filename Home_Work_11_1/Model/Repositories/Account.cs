@@ -21,16 +21,16 @@ public class Account
 
     #region Конструкторы
     /// <summary>
-    /// Банковский счёт клиента с уникальным идентификационным номером idClient
+    /// Банковский счёт клиента с уникальным идентификационным номером id
     /// с начальной суммой sum
     /// </summary>
-    /// <param name="sum">Сумма на счёте</param>
-    /// <param name="idClient">Уникальный идентификационный номер клиента</param>
-    public Account(Guid idClient, int sum)
+    /// <param name="sum">Сумма на счёте клиента</param>
+    /// <param name="id">Уникальный идентификационный номер счёта клиента</param>
+    public Account(Guid id, int sum)
     {
-        Id = Guid.NewGuid();
+        Id = id;
         Sum = sum;
-        IdClient = idClient;
+        IdClient = Guid.NewGuid();
     }
     #endregion
 }
