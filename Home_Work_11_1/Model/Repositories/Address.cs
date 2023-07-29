@@ -20,7 +20,7 @@ public class Address
     /// <summary>
     /// Номер дома
     /// </summary>
-    public int HouseNumber { get; set; }
+    public string HouseNumber { get; set; }
 
     /// <summary>
     /// Номер квартиры
@@ -29,7 +29,7 @@ public class Address
 
     public Address(string town,
                    string street,
-                   int houseNumber,
+                   string houseNumber,
                    int apartmentNumber)
     {
         if (string.IsNullOrEmpty(town))

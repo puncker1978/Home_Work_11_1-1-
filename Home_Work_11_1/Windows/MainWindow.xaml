@@ -46,7 +46,7 @@
                             Height="32"
                             ToolTip="Поиск по фамилии"
                             ToolTipService.InitialShowDelay="10"
-                            Click="searchButton_Click">
+                            Click="SearchButton_Click">
                         <StackPanel Orientation="Horizontal">
                             <Label Content="Поиск"
                                    HorizontalAlignment="Left"
@@ -65,7 +65,7 @@
                         Height="32"
                         Margin="5 0 0 0"
                         ToolTip="Сброс"
-                        ToolTipService.InitialShowDelay="10" Click="cancel_Click">
+                        ToolTipService.InitialShowDelay="10" Click="Cancel_Click">
                         <iconPacks:PackIconModern Kind="Cancel"
                                                   Width="25"
                                                   Height="25"/>
@@ -85,7 +85,7 @@
                     <Button x:Name="sortByAscending"
                             Width="40"
                             Height="40"
-                            Margin="55 0 10 0" Click="sortByAscending_Click"
+                            Margin="55 0 10 0" Click="SortByAscending_Click"
                             ToolTip="Сортировка по возрастанию длины имени">
                             <iconPacks:PackIconMaterial Kind="SortAscending"
                                                     Width="32"
@@ -95,7 +95,7 @@
                     <Button x:Name="sortByDescending"
                             Width="40"
                             Height="40"
-                            Click="sortByDescending_Click"
+                            Click="SortByDescending_Click"
                             ToolTip="Сортировка по убыванию длины имени">
                             <iconPacks:PackIconMaterial Kind="SortDescending"
                                                     Width="32"
@@ -108,7 +108,7 @@
                 <Button x:Name="newClient"
                         Grid.Row="1" Grid.Column="2"
                         Width="185"
-                        Height="32" Click="newClient_Click">
+                        Height="32" Click="NewClient_Click">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Новый клиент"
                             HorizontalAlignment="Left"

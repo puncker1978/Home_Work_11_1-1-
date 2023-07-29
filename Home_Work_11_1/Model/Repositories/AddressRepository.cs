@@ -54,7 +54,7 @@ public static class AddressRepository
     {
             return new(towns[random.Next(1, townsNumber)],
                 streets[random.Next(1, streetsNumber)],
-                random.Next(1, 100),
+                random.Next(1, 100).ToString(),
                 random.Next(1, 100));
     }
 }
