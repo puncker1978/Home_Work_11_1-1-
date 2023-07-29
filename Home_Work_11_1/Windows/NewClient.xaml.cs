@@ -22,9 +22,11 @@ public partial class NewClient : Window
         InitializeComponent();
         idAccount = Guid.NewGuid();
         id_account.Text = idAccount.ToString();
+        id_account.IsEnabled = false;
         birthday.Text = DateTime.Now.ToString();
         birthday.Foreground = Brushes.DarkRed;
         birthday.FontWeight = FontWeights.Bold;
+        save_NewClient.IsEnabled = false;
     }
 
     private void SaveNewClient_Click(object sender, RoutedEventArgs e)
@@ -41,5 +43,26 @@ public partial class NewClient : Window
         repository.Clients.Add(client);
 
         this.Close();
+    }
+
+    private void second_name_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+    {
+        //if(String.IsNullOrWhiteSpace(second_name.Text))
+        //{
+        //    MessageBox.Show("Поле не должно быть пустым!");
+        //}
+    }
+
+    private void second_name_LostFocus(object sender, RoutedEventArgs e)
+    {
+        if (String.IsNullOrWhiteSpace(second_name.Text))
+        {
+            MessageBox.Show($"Поле не должно быть пустым!");
+            return;
+        }
+        else
+        {
+            save_NewClient.IsEnabled = true;
+        }
     }
 }

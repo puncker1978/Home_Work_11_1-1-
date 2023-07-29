@@ -49,7 +49,9 @@
                         Grid.Row="0"
                         Margin="2"
                         FontSize="16"
-                        VerticalContentAlignment="Center"/>
+                        VerticalContentAlignment="Center"
+                        MouseLeave="second_name_MouseLeave"
+                        LostFocus="second_name_LostFocus"/>
 
                 <!--Имя-->
                 <Label Grid.Column="0"
